@@ -55,6 +55,10 @@ This report documents the chronological execution, environment setup, and sequen
 * **Verification:** Pulled the immutable artifact using the Git Commit SHA tag and ran the container.
     * `docker pull omishamadan/task1-node-app:<COMMIT_SHA>`
     * `docker run -d -p 8080:3000 --name task1_app_final omishamadan/task1-node-app:<COMMIT_SHA>`
-* **Result:** Verified the application message in the browser at `http://localhost:8080/`, confirming the deployed artifact is fully functional.
+* **Result:** Verified the application message in the browser at `http://localhost:8080/`, confirming the deployed artifact is fully func
+<img width="1888" height="839" alt="Screenshot 2025-10-20 174528" src="https://github.com/user-attachments/assets/dbe0a1ad-ba2e-47c7-b7bd-90ae6b16335c" />
+tional.
+  
+<img width="1907" height="1015" alt="Screenshot 2025-10-20 174207" src="https://github.com/user-attachments/assets/7c1d0359-7d91-4ada-b358-bc3adc468129" />
 
 
