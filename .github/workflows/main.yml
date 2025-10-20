@@ -1,0 +1,48 @@
+name: Docker CI/CD Build and Push
+
+# Trigger the workflow on every push to the main branch
+on:
+  push:
+    branches: [ main ]
+  # Also allows manual execution for testing purposes
+  workflow_dispatch:
+
+# Define a single job for the build and push process
+jobs:
+  build_and_push:
+    # Use an Ubuntu runner provided by GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Log in to Docker Hub using the secrets
+      # This step uses the DOCKER_USERNAME and DOCKER_PASSWORD secrets you created
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 3. Define the image name tag (using the secured username)
+      - name: Set up Docker Image Tag
+        id: docker_meta
+        # Note: The tag will be your-username/nodejs-demo-task1:latest
+        run: echo "IMAGE_NAME_TAG=${{ secrets.DOCKER_USERNAME }}/nodejs-demo-task1:latest" >> $GITHUB_OUTPUT
+
+      # 4. Build and push the Docker image to DockerHub
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.docker_meta.outputs.IMAGE_NAME_TAG }}
+          file: ./Dockerfile
+
+      # 5. Confirmation and Final Status
+      - name: CI/CD Pipeline Completion
+        run: |
+          echo "CI phase COMPLETE! The Docker image is now available on DockerHub."
+          echo "Image: ${{ steps.docker_meta.outputs.IMAGE_NAME_TAG }}"
