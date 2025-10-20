@@ -1,22 +1,14 @@
 cat << 'EOF' > Dockerfile
-# Stage 1: Use an official Node.js runtime image as the base
+# Stage 1: 
 FROM node:18-alpine
-
 # Set the working directory inside the container
 WORKDIR /usr/src/app
-
-# Copy the package.json and package-lock.json first
+# Copy package.json and package-lock.json 
 COPY package*.json ./
-
-# Install application dependencies for production only
+# Install application dependencies
 RUN npm ci --only=production
-
-# Copy the rest of the application source code
 COPY . .
-
-# Inform Docker that the container listens on the specified port
+#specified port
 EXPOSE 3000
-
-# Define the command to run the application when the container starts
 CMD ["node", "server.js"]
 EOF
