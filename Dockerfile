@@ -1,4 +1,3 @@
-cat << 'EOF' > Dockerfile
 # Stage 1: 
 FROM node:18-alpine
 # Set the working directory inside the container
@@ -11,4 +10,4 @@ COPY . .
 #specified port
 EXPOSE 3000
 CMD ["node", "server.js"]
-EOF
+
