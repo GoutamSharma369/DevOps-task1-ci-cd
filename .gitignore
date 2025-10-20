@@ -1,0 +1,11 @@
+cat << 'EOF' > .gitignore
+# Dependencies
+/node_modules
+/npm-debug.log
+.env
+
+# Logs and OS files
+npm-debug.log*
+.DS_Store
+*.log
+EOF
