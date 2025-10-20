@@ -104,6 +104,8 @@ During development, the pipeline failed fast, allowing for quick identification 
 
 Login Failure: Initially, the workflow failed at the login step due to a secret name mismatch (DOCKER_PASSWORD vs. DOCKERHUB_TOKEN). This was fixed by correctly referencing DOCKERHUB_TOKEN in the YAML.
 
-Build Failure: The pipeline failed at the build step due to residual shell command syntax (cat) at the start of the Dockerfile. This was resolved by cleaning the Dockerfile in vim.
+Build Failure: The pipeline failed at the build step due to residual shell command syntax (cat) at the start of the Dockerfile. This was resolved by cleanin<img width="1902" height="903" alt="Screenshot 2025-10-20 160436" src="https://github.com/user-attachments/assets/60198759-9e3b-4e65-b8a3-607145fa0a17" />
+g the Dockerfile in vim.
 
 By overcoming these errors, the pipeline is now robust and reliable for future updates.
+<img width="1907" height="879" alt="Screenshot 2025-10-20 170746" src="https://github.com/user-attachments/assets/5af7eca2-ffe9-4ddc-b7f7-b3bfcfae9b12" />
