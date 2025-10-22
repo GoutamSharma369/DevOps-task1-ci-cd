@@ -60,5 +60,6 @@ This report documents the chronological execution, environment setup, and sequen
 tional.
   
 <img width="1907" height="1015" alt="Screenshot 2025-10-20 174207" src="https://github.com/user-attachments/assets/7c1d0359-7d91-4ada-b358-bc3adc468129" />
+<img width="776" height="391" alt="diagram-export-10-22-2025-9_06_12-AM" src="https://github.com/user-attachments/assets/abe733b1-378e-40f6-8d25-4bd47d00d17b" />
 
 
